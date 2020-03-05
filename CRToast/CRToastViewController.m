@@ -8,8 +8,6 @@
 #import "CRToastLayoutHelpers.h"
 
 #pragma mark - CRToastContainerView
-@interface CRToastContainerView : UIView
-@end
 
 @implementation CRToastContainerView
 @end
