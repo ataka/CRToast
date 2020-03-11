@@ -22,11 +22,15 @@
 // Main Window の UI が操作できなくなるため、Toast 箇所以外のビューがタップされた場合は透過するように調整
 // 一時的な対応なので 本ライブラリ自体差し替えを検討する必要がある
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    UIView *hitView = [super hitTest:point withEvent:event];
-    if ([hitView isKindOfClass:CRToastContainerView.class]) {
-        return hitView;
+    if (@available(iOS 13, *)) {
+        UIView *hitView = [super hitTest:point withEvent:event];
+        if ([hitView isKindOfClass:CRToastContainerView.class]) {
+            return hitView;
+        }
+        return nil;
+    } else {
+        return [super hitTest:point withEvent:event];
     }
-    return nil;
 }
 
 @end
