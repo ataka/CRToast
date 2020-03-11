@@ -6,6 +6,9 @@
 #import <UIKit/UIKit.h>
 @class CRToast;
 
+@interface CRToastContainerView : UIView
+@end
+
 @interface CRToastViewController : UIViewController
 
 @property (nonatomic, assign) BOOL autorotate;
